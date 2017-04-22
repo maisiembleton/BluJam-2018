@@ -20,10 +20,17 @@ public class Game extends PApplet {
     }
 
     public void settings() {
-        size(500, 500);
+        size(1280, 832);
     }
 
+
+
+
     public void setup() {
+        //background image
+
+        AssetHandler.addAsset("bg (1).png", this);
+
         PGraphics testGraphic = createGraphics(32, 32);
         testGraphic.beginDraw();
         testGraphic.fill(100);
@@ -37,10 +44,15 @@ public class Game extends PApplet {
         t.fill(255, 0, 0);
         t.rect(0,0,40, 10);
         t.endDraw();
-        Asset ta = new Asset("platform.jpg", t);
+        Asset ta = new Asset("platform.png", t);
         AssetHandler.assets.put(ta.name, ta);
-        AssetHandler.addAsset("platform.jpg", this);
+        AssetHandler.addAsset("platform.png", this);
+
+
+        AssetHandler.addAsset("wall.png", this);
+
         currentLevel = new TestLevel();
+
     }
 
     float x = 0;
