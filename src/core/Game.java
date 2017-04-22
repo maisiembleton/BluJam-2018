@@ -20,7 +20,7 @@ public class Game extends PApplet {
     }
 
     public void settings() {
-        size(500, 500);
+        size(900, 640);
     }
 
     public void setup() {
