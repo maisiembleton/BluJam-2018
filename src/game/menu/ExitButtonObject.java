@@ -32,6 +32,10 @@ public class ExitButtonObject extends Button {
     }
 
 
+    @Override
+    public void onMove(Game game, int x, int y) {
+
+    }
 
     @Override
     public void onClick(Game game, int x, int y) {

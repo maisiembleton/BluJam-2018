@@ -48,7 +48,9 @@ public class PlayerObject extends GameObject implements Collidable, Physicable{
 
     private void handleInput() {
         if (collider.hasCollided()) {
-            canJump = true;
+            if (collider.yOverlaps(collider.getCollidedWith())) {
+                canJump = true;
+            }
         }
 
         PVector force = new PVector();

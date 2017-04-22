@@ -1,6 +1,5 @@
 package core;
 
-import game.TestLevel;
 import game.menu.MenuLevel;
 import processing.core.PApplet;
 import processing.core.PGraphics;
@@ -97,7 +96,7 @@ public class Game extends PApplet {
         //AudioHandler.loadAudioFile("biotone.wav", this);
         //AudioHandler.playAudioFile("biotone.wav");
 
-        currentLevel = new TestLevel();
+        currentLevel = new MenuLevel();
 
     }
 
@@ -108,6 +107,7 @@ public class Game extends PApplet {
     boolean paused = false;
     long pastNano = System.nanoTime();
     public void draw() {
+
         processSignals();
 
         InputHandler.addEvent(new MouseEvent(this, mouseX, mouseY, MouseEvent.Type.MOVE));
@@ -121,6 +121,7 @@ public class Game extends PApplet {
         }
 
         InputHandler.clearEvents();
+
     }
 
     private void processSignals() {

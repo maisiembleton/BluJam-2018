@@ -137,9 +137,6 @@ public class ColliderComponent {
             if (this.getAbsY2() > other.getAbsY() &&
                     this.getAbsY2() < other.getAbsY2()) {
                 return true;
-            } else if (this.getAbsY() > other.getAbsY() &&
-                    this.getAbsY2() < other.getAbsX2()) {
-                return true;
             } else {
                 return false;
             }
