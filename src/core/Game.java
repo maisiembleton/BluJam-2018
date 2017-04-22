@@ -1,5 +1,6 @@
 package core;
 
+import game.TestLevel;
 import game.menu.MenuLevel;
 import processing.core.PApplet;
 import processing.core.PGraphics;
@@ -95,7 +96,7 @@ public class Game extends PApplet {
         //AudioHandler.loadAudioFile("biotone.wav", this);
         //AudioHandler.playAudioFile("biotone.wav");
 
-        currentLevel = new MenuLevel();
+        currentLevel = new TestLevel();
 
     }
 
@@ -129,7 +130,7 @@ public class Game extends PApplet {
             } else if (signal.equals("resume")) {
                 paused = false;
             } else if (signal.equals("")) {
-                
+
             }
         }
     }

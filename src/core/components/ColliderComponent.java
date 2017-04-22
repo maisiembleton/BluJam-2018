@@ -38,6 +38,10 @@ public class ColliderComponent {
         return this.collisionBox.overlaps(otherObj.getCollider().collisionBox);
     }
 
+    public void clear() {
+        this.collidedWith = null;
+    }
+
     public boolean xOverlaps(Collidable otherObj) {
         return this.collisionBox.xOverlaps(otherObj.getCollider().collisionBox);
     }
