@@ -10,5 +10,7 @@
     <orderEntry type="library" name="core" level="project" />
     <orderEntry type="library" name="core1" level="project" />
     <orderEntry type="library" name="sound" level="project" />
+    <orderEntry type="library" name="sound1" level="project" />
+    <orderEntry type="library" name="sound2" level="project" />
   </component>
 </module>

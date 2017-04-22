@@ -1,4 +1,4 @@
-package game;
+package game.levelElements;
 
 import core.Asset;
 import core.AssetHandler;
@@ -11,14 +11,14 @@ import core.components.PhysicsComponent;
 /**
  * Created by zva on 22/04/17.
  */
-public class BoxObject extends GameObject implements Collidable, Physicable {
+public class TileObject2 extends GameObject implements Collidable, Physicable {
 
     private PhysicsComponent physics;
     private ColliderComponent collider;
 
     private Asset asset;
 
-    public BoxObject(float x, float y) {
+    public TileObject2(float x, float y) {
         position.x = x;
         position.y = y;
 
@@ -26,7 +26,7 @@ public class BoxObject extends GameObject implements Collidable, Physicable {
         physics = new PhysicsComponent(this);
         //physics.setGravity(false);
         collider = new ColliderComponent(this, 64, 64);
-        asset = AssetHandler.getAsset("boxtile.png");
+        asset = AssetHandler.getAsset("tile1.png");
     }
 
     @Override
@@ -51,6 +51,6 @@ public class BoxObject extends GameObject implements Collidable, Physicable {
     }
 
     public String toString() {
-        return "Box :" + position.x + position.y;
+        return "Tile1 :" + position.x + position.y;
     }
 }

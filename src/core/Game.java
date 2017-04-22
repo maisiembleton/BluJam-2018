@@ -1,6 +1,6 @@
 package core;
 
-import game.TestLevel;
+import game.menu.MenuLevel;
 import processing.core.PApplet;
 import processing.core.PGraphics;
 import processing.core.PImage;
@@ -55,11 +55,10 @@ public class Game extends PApplet {
         t.endDraw();
         Asset ta = new Asset("platform.png", t);
         AssetHandler.assets.put(ta.name, ta);
+
+       //Object stuff
         AssetHandler.addAsset("platform.png", this); //146x32
-
-
         AssetHandler.addAsset("wall.png", this); //81x832
-
         AssetHandler.addAsset("tile1.png", this); //64x64
         AssetHandler.addAsset("tile2.png", this); //64x64
         AssetHandler.addAsset("tile3.png", this); //64x64
@@ -67,7 +66,18 @@ public class Game extends PApplet {
         AssetHandler.addAsset("spikes (2).png", this); //146x23
         AssetHandler.addAsset("boxtile.png", this); //64x64
 
-        currentLevel = new TestLevel();
+
+        //menu
+        AssetHandler.addAsset("title.png", this); //626x300
+        AssetHandler.addAsset("playbutton.png", this); //378x81
+        AssetHandler.addAsset("exitbutton.png", this); //378x81
+
+
+        //audio
+        //AudioHandler.loadAudioFile("biotone.wav", this);
+        //AudioHandler.playAudioFile("biotone.wav");
+
+        currentLevel = new MenuLevel();
 
     }
 

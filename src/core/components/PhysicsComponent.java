@@ -21,7 +21,7 @@ public class PhysicsComponent <T extends GameObject & Physicable & Collidable> {
     float mass;
     float dragCoefficent = 0.5f;
 
-    PVector velocity = new PVector(0, 0);
+    public PVector velocity = new PVector(0, 0);
     PVector acceleration = new PVector(0, 0);
     PVector netForce = new PVector(0, 0);
 
@@ -80,14 +80,17 @@ public class PhysicsComponent <T extends GameObject & Physicable & Collidable> {
                     normal = 'y';
                 }
             }
-            obj.getPosition().set(originalPos);
+           // obj.getPosition().set(originalPos);
 
             if (normal == 'x') {
                 Debug.print(normal);
                 netForce = new PVector(0, netForce.y);
+                velocity = new PVector(0, velocity.y);
+
             } else if (normal == 'y') {
                 Debug.print(normal);
                 netForce = new PVector(netForce.x, 0);
+                velocity = new PVector(velocity.x, 0);
             }
 
         }

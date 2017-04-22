@@ -1,4 +1,4 @@
-package game;
+package game.levelElements;
 
 import core.Asset;
 import core.AssetHandler;
@@ -11,22 +11,22 @@ import core.components.PhysicsComponent;
 /**
  * Created by zva on 22/04/17.
  */
-public class SpikesObject extends GameObject implements Collidable, Physicable {
+public class WallObject extends GameObject implements Collidable, Physicable {
 
     private PhysicsComponent physics;
     private ColliderComponent collider;
 
     private Asset asset;
 
-    public SpikesObject(float x, float y) {
+    public WallObject(float x, float y) {
         position.x = x;
         position.y = y;
 
 
         physics = new PhysicsComponent(this);
         //physics.setGravity(false);
-        collider = new ColliderComponent(this, 146, 23);
-        asset = AssetHandler.getAsset("spikes (1).png");
+        collider = new ColliderComponent(this, 61, 630);
+        asset = AssetHandler.getAsset("wall.png");
     }
 
     @Override
@@ -51,6 +51,6 @@ public class SpikesObject extends GameObject implements Collidable, Physicable {
     }
 
     public String toString() {
-        return "Spikes 1 :" + position.x + position.y;
+        return "Wall :" + position.x + position.y;
     }
 }

@@ -1,6 +1,7 @@
 package game;
 
 import core.Level;
+import game.levelElements.*;
 
 /**
  * Created by zva on 22/04/17.

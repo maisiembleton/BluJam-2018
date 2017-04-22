@@ -1,4 +1,4 @@
-package game;
+package game.levelElements;
 
 import core.Asset;
 import core.AssetHandler;

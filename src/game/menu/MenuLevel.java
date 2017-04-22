@@ -1,0 +1,20 @@
+package game.menu;
+
+import core.Level;
+import game.Background;
+
+/**
+ * Created by zva on 22/04/17.
+ */
+public class MenuLevel extends Level {
+
+    //private PlayerObject player = new PlayerObject();
+
+    public MenuLevel() {
+
+        addGameObject(new Background(0, 0));
+        addGameObject(new TitleObject(380, 100));
+        addGameObject(new PlayButtonObject(450, 450));
+        addGameObject(new ExitButtonObject(450, 550));
+    }
+}

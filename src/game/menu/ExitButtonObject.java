@@ -1,4 +1,4 @@
-package game;
+package game.menu;
 
 import core.Asset;
 import core.AssetHandler;
@@ -7,17 +7,16 @@ import core.GameObject;
 /**
  * Created by zva on 22/04/17.
  */
-public class MenuBackground extends GameObject {
-
+public class ExitButtonObject extends GameObject {
 
 
     private Asset asset;
 
-    public MenuBackground(float x, float y) {
-        position.x = 0;
-        position.y = 0;
+    public ExitButtonObject(float x, float y) {
+        position.x = x;
+        position.y = y;
 
-        asset = AssetHandler.getAsset("titlepage.png");
+        asset = AssetHandler.getAsset("exitbutton.png");
     }
 
 
@@ -30,6 +29,4 @@ public class MenuBackground extends GameObject {
     public void update(float dt) {
 
     }
-
-
 }
