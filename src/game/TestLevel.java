@@ -15,7 +15,13 @@ public class TestLevel extends Level {
 
         addGameObject(new PlayerObject());
         addGameObject(new PlatformObject(5, 200));
-        addGameObject(new WallObject(-50, 0));
-        addGameObject(new WallObject(1250, 0));
+        addGameObject(new WallObject(-80, 0));
+        addGameObject(new WallObject(1280, 0));
+        addGameObject(new TileObject1(0, 750));
+        addGameObject(new TileObject2(64, 750));
+        addGameObject(new TileObject3(128, 750));
+        addGameObject(new TileObject1(192, 750));
+        addGameObject(new SpikesObject(5, 232));
+        addGameObject(new SpikesObject2(50, 300));
     }
 }

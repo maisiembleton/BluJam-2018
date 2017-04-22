@@ -29,7 +29,7 @@ public class Game extends PApplet {
     public void setup() {
         //background image
 
-        AssetHandler.addAsset("bg (1).png", this);
+        AssetHandler.addAsset("bg (1).png", this); //1280x832
 
         PGraphics testGraphic = createGraphics(32, 32);
         testGraphic.beginDraw();
@@ -46,10 +46,16 @@ public class Game extends PApplet {
         t.endDraw();
         Asset ta = new Asset("platform.png", t);
         AssetHandler.assets.put(ta.name, ta);
-        AssetHandler.addAsset("platform.png", this);
+        AssetHandler.addAsset("platform.png", this); //146x32
 
 
-        AssetHandler.addAsset("wall.png", this);
+        AssetHandler.addAsset("wall.png", this); //81x832
+
+        AssetHandler.addAsset("tile1.png", this); //64x64
+        AssetHandler.addAsset("tile2.png", this); //64x64
+        AssetHandler.addAsset("tile3.png", this); //64x64
+        AssetHandler.addAsset("spikes (1).png", this); //146x23
+        AssetHandler.addAsset("spikes (2).png", this); //146x23
 
         currentLevel = new TestLevel();
 
