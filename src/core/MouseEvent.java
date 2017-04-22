@@ -5,7 +5,7 @@ package core;
  */
 public class MouseEvent {
     public enum Type {
-        PRESS, RELEASE
+        PRESS, RELEASE, MOVE
     }
     public final Game game;
     public final Type type;
