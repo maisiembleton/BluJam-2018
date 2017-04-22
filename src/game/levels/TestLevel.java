@@ -1,6 +1,8 @@
-package game;
+package game.levels;
 
 import core.Level;
+import game.Background;
+import game.PlayerObject;
 import game.levelElements.*;
 
 /**

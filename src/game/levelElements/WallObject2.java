@@ -11,22 +11,22 @@ import core.components.PhysicsComponent;
 /**
  * Created by zva on 22/04/17.
  */
-public class WallObject extends GameObject implements Collidable, Physicable {
+public class WallObject2 extends GameObject implements Collidable, Physicable {
 
     private PhysicsComponent physics;
     private ColliderComponent collider;
 
     private Asset asset;
 
-    public WallObject(float x, float y) {
+    public WallObject2(float x, float y) {
         position.x = x;
         position.y = y;
 
 
         physics = new PhysicsComponent(this);
         //physics.setGravity(false);
-        collider = new ColliderComponent(this, 81, 832);
-        asset = AssetHandler.getAsset("wall.png");
+        collider = new ColliderComponent(this, 61, 630);
+        asset = AssetHandler.getAsset("wall (1).png");
     }
 
     @Override

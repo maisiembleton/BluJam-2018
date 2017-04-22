@@ -38,6 +38,14 @@ public class PlayerObject extends GameObject implements Collidable, Physicable{
         physics = new PhysicsComponent(this);
     }
 
+    public PlayerObject(float x, float y) {
+        position.x = x;
+        position.y = y;
+        asset = AssetHandler.getAsset("test");
+        collider = new ColliderComponent(this);
+        physics = new PhysicsComponent(this);
+    }
+
     private void handleInput() {
         if (collider.hasCollided()) {
             canJump = true;
