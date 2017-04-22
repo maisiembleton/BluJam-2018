@@ -5,13 +5,13 @@ import core.GameObject;
 
 import java.util.Collection;
 
-/**
+/**GameObject
  * Created by zva on 21/04/17.
  */
 public class ColliderComponent {
 
     private GameObject obj;
-    private GameObject collidedWith;
+    private Collidable collidedWith;
     private Rectangle collisionBox;
 
     public <T extends GameObject & Collidable> ColliderComponent(T obj) {
@@ -28,8 +28,21 @@ public class ColliderComponent {
         return collidedWith != null;
     }
 
+    public Collidable getCollidedWith() {return collidedWith;}
+    public void setCollidedWith(Collidable obj) {
+        this.collidedWith = obj;
+    }
+
     public boolean collidesWith(Collidable otherObj) {
         return this.collisionBox.overlaps(otherObj.getCollider().collisionBox);
+    }
+
+    public boolean xOverlaps(Collidable otherObj) {
+        return this.collisionBox.xOverlaps(otherObj.getCollider().collisionBox);
+    }
+
+    public boolean yOverlaps(Collidable otherObj) {
+        return this.collisionBox.yOverlaps(otherObj.getCollider().collisionBox);
     }
 
     private class Rectangle {
@@ -66,11 +79,35 @@ public class ColliderComponent {
             this.height = height;
         }
 
-        private boolean overlaps(Rectangle otherRectangle) {
+        public boolean overlaps(Rectangle otherRectangle) {
             return this.getAbsX() < otherRectangle.getAbsX2() &&
                     this.getAbsX2() > otherRectangle.getAbsX() &&
                     this.getAbsY() < otherRectangle.getAbsY2() &&
                     this.getAbsY2() > otherRectangle.getAbsY();
+        }
+
+        public boolean xOverlaps(Rectangle other) {
+            if (this.getAbsX2() > other.getAbsX() &&
+                    this.getAbsX2() < other.getAbsX2()) {
+                return true;
+            } else if (this.getAbsX() > other.getAbsX() &&
+                    this.getAbsX() < other.getAbsX2()) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        public boolean yOverlaps(Rectangle other) {
+            if (this.getAbsY2() > other.getAbsY() &&
+                    this.getAbsY2() < other.getAbsY2()) {
+                return true;
+            } else if (this.getAbsY() > other.getAbsY() &&
+                    this.getAbsY2() < other.getAbsX2()) {
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 }

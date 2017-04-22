@@ -40,19 +40,21 @@ public class PlayerObject extends GameObject implements Collidable, Physicable{
     }
 
     private void handleInput() {
+        PVector force = new PVector();
         if (InputHandler.isKeyDown(65)) {
-            position.x--;
+            force.add(-1, 0);
         }
         if (InputHandler.isKeyDown(68)) {
-            PVector force = new PVector(1, 0);
-            physics.addForce(force);
+            force.add(1, 0);
         }
         if (InputHandler.isKeyDown(87)) {
-            position.y--;
+            force.add(0,-1);
         }
         if (InputHandler.isKeyDown(83)) {
-            position.y++;
+            force.add(0, 1);
         }
+
+        physics.addForce(force);
     }
 
     @Override
