@@ -3,9 +3,7 @@ package game.menu;
 import core.Asset;
 import core.AssetHandler;
 import core.Game;
-import core.GameObject;
 import game.Button;
-import game.TestLevel;
 
 /**
  * Created by zva on 22/04/17.
@@ -39,7 +37,7 @@ public class ExitButtonObject extends Button {
     public void onClick(Game game, int x, int y) {
         if (x > position.x && x < position.x + width &&
                 y > position.y && y < position.y + height) {
-            
+
             game.exit();
         }
     }
