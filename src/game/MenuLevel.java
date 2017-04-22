@@ -5,11 +5,11 @@ import core.Level;
 /**
  * Created by zva on 22/04/17.
  */
-public class TestLevel extends Level {
+public class MenuLevel extends Level {
 
-    private PlayerObject player = new PlayerObject();
+    //private PlayerObject player = new PlayerObject();
 
-    public TestLevel() {
+    public MenuLevel() {
 
         addGameObject(new Background(0, 0));
 
