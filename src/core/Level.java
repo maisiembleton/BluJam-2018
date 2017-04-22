@@ -45,7 +45,9 @@ public class Level {
             for (int j = i+1; j < collidables.size(); j++) {
                 Collidable objToCheck = collidables.get(j);
                 if (obj.getCollider().collidesWith(objToCheck)) {
+                    obj.getCollider().setCollidedWith(objToCheck);
                     Debug.print("Found collision");
+                    break;
                 }
             }
         }
