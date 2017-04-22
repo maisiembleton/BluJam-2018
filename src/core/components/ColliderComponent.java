@@ -2,6 +2,7 @@ package core.components;
 
 import core.Debug;
 import core.GameObject;
+import processing.core.PVector;
 
 import java.util.Collection;
 
@@ -67,6 +68,25 @@ public class ColliderComponent {
             return getAbsY()+height;
         }
 
+        private PVector[] getEdgeVectors() {
+            PVector[] vectors = new PVector[4];
+            vectors[0] = new PVector(width, 0);
+            vectors[1] = new PVector(0, height);
+            vectors[2] = new PVector(0, -height);
+            vectors[3] = new PVector(-width, 0);
+            return vectors;
+        }
+
+        private PVector[] getVertexVectors() {
+            PVector[] vectors = new PVector[4];
+            PVector center = new PVector(getAbsX()+width/2, getAbsY()+height/2);
+            vectors[0] = new PVector(getAbsX(), getAbsY()).sub(center);
+            vectors[1] = new PVector(getAbsX(), getAbsY2()).sub(center);
+            vectors[2] = new PVector(getAbsX2(), getAbsY()).sub(center);
+            vectors[3] = new PVector(getAbsX2(), getAbsY2()).sub(center);
+            return vectors;
+        }
+
         private Rectangle(float width, float height) {
             this.width = width;
             this.height = height;
@@ -77,6 +97,17 @@ public class ColliderComponent {
             this.dy = dy;
             this.width = width;
             this.height = height;
+        }
+
+        public boolean collide(Rectangle other) {
+            for (PVector edge : this.getEdgeVectors()) {
+                PVector norm = new PVector(edge.y, -edge.x);
+                float gap;
+                for (PVector vertex : this.getVertexVectors()) {
+                    float p = vertex.dot(norm)/norm.mag();
+                }
+            }
+            return false;
         }
 
         public boolean overlaps(Rectangle otherRectangle) {

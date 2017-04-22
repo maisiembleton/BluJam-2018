@@ -9,6 +9,15 @@ public class Game extends PApplet {
 
     private Level currentLevel;
 
+
+    public void mousePressed() {
+        InputHandler.addEvent(new MouseEvent(this, mouseX, mouseY, MouseEvent.Type.PRESS));
+    }
+
+    public void mouseReleased() {
+        InputHandler.addEvent(new MouseEvent(this, mouseX, mouseY, MouseEvent.Type.RELEASE));
+    }
+
     public void keyPressed() {
         Debug.print(keyCode);
         InputHandler.keyDown.put(keyCode, true);
@@ -17,6 +26,10 @@ public class Game extends PApplet {
     public void keyReleased() {
         Debug.print(keyCode);
         InputHandler.keyDown.put(keyCode, false);
+    }
+
+    public void changeLevel(Level level) {
+        currentLevel = level;
     }
 
     public void settings() {
@@ -88,6 +101,7 @@ public class Game extends PApplet {
     boolean paused = false;
     long pastNano = System.nanoTime();
     public void draw() {
+
         long elapsedNano = System.nanoTime() - pastNano;
         background(255);
         if (!paused) {
@@ -96,6 +110,7 @@ public class Game extends PApplet {
             render(currentLevel);
         }
 
+        InputHandler.clearEvents();
     }
 
     public void render(Level level) {
