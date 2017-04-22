@@ -1,9 +1,6 @@
 package game;
 
-import core.Asset;
-import core.AssetHandler;
-import core.GameObject;
-import core.InputHandler;
+import core.*;
 import core.components.Collidable;
 import core.components.ColliderComponent;
 import core.components.Physicable;
@@ -52,6 +49,10 @@ public class PlayerObject extends GameObject implements Collidable, Physicable{
         }
         if (InputHandler.isKeyDown(83)) {
             force.add(0, 1);
+        }
+
+        for (MouseEvent e : InputHandler.getMouseEvents()) {
+            Debug.print(e);
         }
 
         physics.addForce(force);
