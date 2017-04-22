@@ -28,4 +28,9 @@ public class AssetHandler {
         return new HashMap<>();
     }
 
+    public static void addAsset(String file, Game game) {
+        Asset asset = Asset.loadAsset(file, game);
+        assets.put(asset.name, asset);
+    }
+
 }
