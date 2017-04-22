@@ -9,10 +9,10 @@ public class MouseEvent {
     }
     public final Game game;
     public final Type type;
-    public final float x;
-    public final float y;
+    public final int x;
+    public final int y;
 
-    public MouseEvent(Game game, float x, float y, Type type) {
+    public MouseEvent(Game game, int x, int y, Type type) {
         this.game = game;
         this.x = x;
         this.y = y;

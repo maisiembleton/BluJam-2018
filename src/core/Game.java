@@ -27,7 +27,7 @@ public class Game extends PApplet {
         Debug.print(keyCode);
         InputHandler.keyDown.put(keyCode, false);
     }
-    
+
     public void changeLevel(Level level) {
         currentLevel = level;
     }
