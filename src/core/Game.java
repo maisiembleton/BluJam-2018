@@ -32,15 +32,14 @@ public class Game extends PApplet {
         Asset testAsset = new Asset("test", testGraphic);
         AssetHandler.assets.put(testAsset.name, testAsset);
 
-        PGraphics t =  createGraphics(40, 10);
+         PGraphics t =  createGraphics(40, 10);
         t.beginDraw();
         t.fill(255, 0, 0);
         t.rect(0,0,40, 10);
         t.endDraw();
         Asset ta = new Asset("platform.jpg", t);
         AssetHandler.assets.put(ta.name, ta);
-
-
+        AssetHandler.addAsset("platform.jpg", this);
         currentLevel = new TestLevel();
     }
 
