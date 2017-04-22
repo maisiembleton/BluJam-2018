@@ -19,7 +19,7 @@ public class PhysicsComponent <T extends GameObject & Physicable & Collidable> {
 
     T obj;
     float mass;
-    float dragCoefficent = 0.5f;
+    float dragCoefficent = 0.3f;
 
     public PVector velocity = new PVector(0, 0);
     PVector acceleration = new PVector(0, 0);

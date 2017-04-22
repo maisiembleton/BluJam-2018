@@ -35,6 +35,9 @@ public class Level {
         for (GameObject obj : gameObjects) {
             obj.update(dt);
         }
+        for (Collidable c : collidables) {
+            c.getCollider().clear();
+        }
     }
 
     private void findCollisions() {

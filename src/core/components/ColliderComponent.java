@@ -38,6 +38,10 @@ public class ColliderComponent {
         return this.collisionBox.overlaps(otherObj.getCollider().collisionBox);
     }
 
+    public void clear() {
+        this.collidedWith = null;
+    }
+
     public boolean xOverlaps(Collidable otherObj) {
         return this.collisionBox.xOverlaps(otherObj.getCollider().collisionBox);
     }
@@ -132,9 +136,6 @@ public class ColliderComponent {
         public boolean yOverlaps(Rectangle other) {
             if (this.getAbsY2() > other.getAbsY() &&
                     this.getAbsY2() < other.getAbsY2()) {
-                return true;
-            } else if (this.getAbsY() > other.getAbsY() &&
-                    this.getAbsY2() < other.getAbsX2()) {
                 return true;
             } else {
                 return false;

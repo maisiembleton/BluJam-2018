@@ -40,6 +40,11 @@ public class PlayButtonObject extends Button  {
 
 
     @Override
+    public void onMove(Game game, int x, int y) {
+
+    }
+
+    @Override
     public void onClick(Game game, int x, int y) {
         if (x > position.x && x < position.x + width &&
                 y > position.y && y < position.y + height) {

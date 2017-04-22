@@ -18,6 +18,8 @@ public class PlayerObject extends GameObject implements Collidable, Physicable{
     private PhysicsComponent physics;
     private Asset asset;
 
+    private boolean canJump = false;
+
     public Asset getAsset() {
         return asset;
     }
@@ -46,6 +48,12 @@ public class PlayerObject extends GameObject implements Collidable, Physicable{
     }
 
     private void handleInput() {
+        if (collider.hasCollided()) {
+            if (collider.yOverlaps(collider.getCollidedWith())) {
+                canJump = true;
+            }
+        }
+
         PVector force = new PVector();
         if (InputHandler.isKeyDown(65)) {
             force.add(-1, 0);
@@ -55,8 +63,9 @@ public class PlayerObject extends GameObject implements Collidable, Physicable{
         }
         if (InputHandler.isKeyDown(87)) {
             force.add(0,-0.1f);
-            if (collider.hasCollided()) {
-                physics.velocity.add(0, -10);
+            if (canJump) {
+                physics.velocity.add(0, -35);
+                canJump = false;
             }
         }
         if (InputHandler.isKeyDown(83)) {
