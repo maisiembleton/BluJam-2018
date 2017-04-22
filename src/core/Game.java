@@ -77,6 +77,7 @@ public class Game extends PApplet {
        //Object stuff
         AssetHandler.addAsset("platform.png", this); //146x32
         AssetHandler.addAsset("wall.png", this); //81x832
+        AssetHandler.addAsset("wall (1).png", this); //61x640
         AssetHandler.addAsset("tile1.png", this); //64x64
         AssetHandler.addAsset("tile2.png", this); //64x64
         AssetHandler.addAsset("tile3.png", this); //64x64
