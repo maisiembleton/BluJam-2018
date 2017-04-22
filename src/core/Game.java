@@ -5,9 +5,14 @@ import processing.core.PApplet;
 import processing.core.PGraphics;
 import processing.core.PImage;
 
+import java.util.Stack;
+
 public class Game extends PApplet {
 
     private Level currentLevel;
+
+    private static Stack<String> signals = new Stack<>();
+    public void addSignal(String signal) {signals.add(signal);}
 
 
     public void mousePressed() {
@@ -101,6 +106,8 @@ public class Game extends PApplet {
     boolean paused = false;
     long pastNano = System.nanoTime();
     public void draw() {
+        processSignals();
+
         InputHandler.addEvent(new MouseEvent(this, mouseX, mouseY, MouseEvent.Type.MOVE));
 
         long elapsedNano = System.nanoTime() - pastNano;
@@ -112,6 +119,19 @@ public class Game extends PApplet {
         }
 
         InputHandler.clearEvents();
+    }
+
+    private void processSignals() {
+        while (!signals.isEmpty()) {
+            String signal = signals.pop();
+            if (signal.equals("pause")) {
+                paused = true;
+            } else if (signal.equals("resume")) {
+                paused = false;
+            } else if (signal.equals("")) {
+                
+            }
+        }
     }
 
     public void render(Level level) {
