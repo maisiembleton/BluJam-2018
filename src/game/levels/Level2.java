@@ -32,8 +32,16 @@ public class Level2 extends Level {
             floorX += 64;
         }
 
-        //wall from top
-        addGameObject(new WallObject2(floorX, 750));
+        //walls
+        addGameObject(new WallObject2(330, -100)); //left top
+
+        addGameObject(new WallObject2(683, 195)); //bottom middle
+
+        addGameObject(new WallObject2(890, -445)); //right top
+
+
+        //platforms
+        addGameObject(new PlatformObject(537, 195)); //left top
 
 
 

@@ -32,7 +32,8 @@ public class PlayerObject extends GameObject implements Collidable, Physicable{
 
     public PlayerObject() {
         asset = AssetHandler.getAsset("test");
-        collider = new ColliderComponent(this);
+
+        collider = new ColliderComponent(this, 70, 33);
         physics = new PhysicsComponent(this);
     }
 
@@ -40,7 +41,7 @@ public class PlayerObject extends GameObject implements Collidable, Physicable{
         position.x = x;
         position.y = y;
         asset = AssetHandler.getAsset("test");
-        collider = new ColliderComponent(this);
+        collider = new ColliderComponent(this, 70, 33);
         physics = new PhysicsComponent(this);
     }
 

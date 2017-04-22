@@ -1,5 +1,6 @@
 package core;
 
+import game.levels.Level2;
 import game.menu.MenuLevel;
 import processing.core.PApplet;
 import processing.core.PGraphics;
@@ -91,7 +92,7 @@ public class Game extends PApplet {
         //AudioHandler.loadAudioFile("biotone.wav", this);
         //AudioHandler.playAudioFile("biotone.wav");
 
-        currentLevel = new MenuLevel();
+        currentLevel = new Level2();
 
     }
 
