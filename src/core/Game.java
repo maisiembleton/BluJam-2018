@@ -63,6 +63,7 @@ public class Game extends PApplet {
     boolean paused = false;
     long pastNano = System.nanoTime();
     public void draw() {
+        InputHandler.addEvent(new MouseEvent(this, mouseX, mouseY, MouseEvent.Type.MOVE));
 
         long elapsedNano = System.nanoTime() - pastNano;
         background(255);

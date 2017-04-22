@@ -45,7 +45,10 @@ public class PlayerObject extends GameObject implements Collidable, Physicable{
             force.add(1, 0);
         }
         if (InputHandler.isKeyDown(87)) {
-            force.add(0,-1);
+            force.add(0,-0.1f);
+            if (collider.hasCollided()) {
+                physics.velocity.add(0, -10);
+            }
         }
         if (InputHandler.isKeyDown(83)) {
             force.add(0, 1);

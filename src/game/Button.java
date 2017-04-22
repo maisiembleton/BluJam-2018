@@ -14,6 +14,8 @@ public abstract class Button extends GameObject {
     protected int threshold = 2;
 
 
+    public abstract void onMove(Game game, int x, int y);
+
     public abstract void onClick(Game game, int x, int y);
 
     private void checkClick() {
@@ -30,6 +32,8 @@ public abstract class Button extends GameObject {
             } else if (evt.type == MouseEvent.Type.RELEASE) {
                 release = evt;
                 checkClick();
+            } else if (evt.type == MouseEvent.Type.MOVE) {
+                onMove(evt.game, evt.x, evt.y);
             }
         }
     }
