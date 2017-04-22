@@ -73,7 +73,8 @@ public class PhysicsComponent <T extends GameObject & Physicable & Collidable> {
             PVector originalPos = new PVector(obj.getPosition().x, obj.getPosition().y);
             char normal = 'o';
             while (obj.getCollider().collidesWith(collidedWith)) {
-                if (velocity.mag() >8){break;}
+              if (velocity.mag() > 8) {break;}
+
                 obj.getPosition().add(-velocity.x*0.001f, -velocity.y*0.001f);
                 if (!obj.getCollider().xOverlaps(collidedWith)) {
                     normal = 'x';
