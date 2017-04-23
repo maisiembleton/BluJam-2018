@@ -79,6 +79,11 @@ public class PhysicsComponent <T extends GameObject & Physicable & Collidable> {
             } else {
                 velocity.set(0, velocity.y);
             }
+
+            while (collider.collidesWith(collider.getCollidedWith())) {
+                Debug.print("Bump");
+                obj.getPosition().add(normal);
+            }
         }
     }
 
@@ -90,7 +95,7 @@ public class PhysicsComponent <T extends GameObject & Physicable & Collidable> {
 
         acceleration = netForce.div(mass);
         velocity.add(acceleration);
-        PVector deltaPosition = new PVector(velocity.x, velocity.y).mult(dt/1000);
+        PVector deltaPosition = new PVector(velocity.x, velocity.y).mult(dt/100);
         obj.getPosition().add(velocity);
 
     }
