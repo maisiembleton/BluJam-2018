@@ -69,6 +69,7 @@ public class PhysicsComponent <T extends GameObject & Physicable & Collidable> {
     private void resolveCollision() {
         ColliderComponent collider = obj.getCollider();
         if (collider.hasCollided()) {
+
             PVector normal = collider.getNormal();
             netForce.add(normal.x*netForce.x, normal.y*netForce.y);
             if (Math.abs(normal.y) > 0.5f) {
