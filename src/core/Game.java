@@ -18,7 +18,8 @@ import java.util.Stack;
 
 public class Game extends PApplet {
 
-    private Level currentLevel;
+    private static Level currentLevel;
+
     private HashMap<String, Level> levels = new HashMap<>();
 
     private static Stack<String> signals = new Stack<>();
@@ -43,7 +44,7 @@ public class Game extends PApplet {
         InputHandler.keyDown.put(keyCode, false);
     }
 
-    public void changeLevel(Level level) {
+    public static void changeLevel(Level level) {
         currentLevel = level;
     }
 
@@ -126,7 +127,6 @@ public class Game extends PApplet {
     long pastNano = System.nanoTime();
     public void draw() {
 
-        processSignals();
 
         InputHandler.addEvent(new MouseEvent(this, mouseX, mouseY, MouseEvent.Type.MOVE));
 
@@ -145,7 +145,7 @@ public class Game extends PApplet {
     private void processSignals() {
         while (!signals.isEmpty()) {
             String signal = signals.pop();
-            if (signal.equals("pause")) {
+            if (signal.equals("pa   use")) {
                 paused = true;
             } else if (signal.equals("resume")) {
                 paused = false;

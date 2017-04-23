@@ -5,6 +5,8 @@ import core.components.Collidable;
 import core.components.ColliderComponent;
 import core.components.Physicable;
 import core.components.PhysicsComponent;
+import game.levelElements.PortalObject;
+import game.levels.Level1;
 import processing.core.PVector;
 
 import javax.swing.*;
@@ -81,6 +83,13 @@ public class PlayerObject extends GameObject implements Collidable, Physicable{
 
     @Override
     public void update(float dt) {
+        if (collider.hasCollided()) {
+            Collidable obj = collider.getCollidedWith();
+            if (obj instanceof PortalObject) {
+                Game.changeLevel(new Level1());
+            }
+        }
+
         asset.toString();
         position.toString();
         handleInput();
