@@ -113,7 +113,7 @@ public class PhysicsComponent<T extends GameObject & Physicable & Collidable> {
         obj.getPosition().add(velocity);
         Collidable c;
         if ((c = obj.getCollider().level.collides(obj)) != null) {
-            
+
             if (c instanceof PortalObject) {
                 Debug.print("Coll?");
                 Game.changeLevel(((PortalObject) c).next);
