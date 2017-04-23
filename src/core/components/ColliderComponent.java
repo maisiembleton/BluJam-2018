@@ -164,6 +164,7 @@ public class ColliderComponent {
                         normal = new PVector(0, 1);
                     }
                 }
+                Debug.print(normal.toString());
                 return true;
             } else {
                 return false;
