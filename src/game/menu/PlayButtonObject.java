@@ -4,10 +4,7 @@ import core.Asset;
 import core.AssetHandler;
 import core.Game;
 import game.Button;
-import game.levels.Level1;
-import game.levels.Level3;
-import game.levels.Level5;
-import game.levels.Level7;
+import game.levels.*;
 
 /**
  * Created by zva on 22/04/17.
@@ -51,7 +48,7 @@ public class PlayButtonObject extends Button  {
     public void onClick(Game game, int x, int y) {
         if (x > position.x && x < position.x + width &&
                 y > position.y && y < position.y + height) {
-            game.changeLevel(new Level1());
+            game.changeLevel(new Level9());
         }
     }
 

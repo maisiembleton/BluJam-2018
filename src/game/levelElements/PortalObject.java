@@ -11,7 +11,7 @@ import game.levels.Level1;
  */
 public class PortalObject extends GameObject implements Collidable {
 
-    private ColliderComponent collider = new ColliderComponent(this, 64, 64);
+    private ColliderComponent collider = new ColliderComponent(this, 60, 120);
     public ColliderComponent getCollider() {return collider;}
 
     private Asset[] assets = new Asset[8];

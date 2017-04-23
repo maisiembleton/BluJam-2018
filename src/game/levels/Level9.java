@@ -93,7 +93,7 @@ public class Level9 extends Level {
 
 
         //portal
-        addGameObject(new PortalObjectFlip(90, 70));
+        addGameObject(new PortalObject(90, 70, new Level10()));
 
     }
 
