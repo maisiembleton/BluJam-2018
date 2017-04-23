@@ -51,7 +51,7 @@ public class PlayerObject extends GameObject implements Collidable, Physicable{
 
     private void handleInput() {
         if (collider.hasCollided()) {
-            if (collider.yOverlaps(collider.getCollidedWith())) {
+            if (collider.getNormal().y < 0) {
                 canJump = true;
             }
         }
