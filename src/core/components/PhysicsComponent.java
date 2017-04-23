@@ -83,7 +83,8 @@ public class PhysicsComponent<T extends GameObject & Physicable & Collidable> {
                 if (velocity.y > 0) {
                     velocity.set(velocity.x, 0);
                 }
-            } else {
+            }
+            if (Math.abs(normal.x) > 0.5f) {
                 velocity.set(0, velocity.y);
             }
 
