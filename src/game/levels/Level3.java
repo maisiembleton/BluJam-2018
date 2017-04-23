@@ -11,7 +11,7 @@ import game.levelElements.TileObject3;
 /**
  * Created by sam on 23/04/17.
  */
-public class Level3 extends Level {
+public class Level3 extends Level { 
 
     private PlayerObject player = new PlayerObject();
 
