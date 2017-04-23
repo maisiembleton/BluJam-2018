@@ -59,6 +59,7 @@ public class Game extends PApplet {
 
 
     public void setup() {
+        scale(0.8f);
         //background image
 
         AssetHandler.addAsset("titlepage.png", this); //1280x832
@@ -126,7 +127,7 @@ public class Game extends PApplet {
     boolean paused = false;
     long pastNano = System.nanoTime();
     public void draw() {
-
+        processSignals();
 
         InputHandler.addEvent(new MouseEvent(this, mouseX, mouseY, MouseEvent.Type.MOVE));
 
@@ -145,7 +146,7 @@ public class Game extends PApplet {
     private void processSignals() {
         while (!signals.isEmpty()) {
             String signal = signals.pop();
-            if (signal.equals("pa   use")) {
+            if (signal.equals("pause")) {
                 paused = true;
             } else if (signal.equals("resume")) {
                 paused = false;
