@@ -38,6 +38,8 @@ public class Level1 extends Level {
 
         }
 
+        //portal
+            addGameObject(new PortalObject(1100, 600));
 
     }
 
@@ -46,8 +48,8 @@ public class Level1 extends Level {
        /**
 
         //addGameObject(new PlatformObject(5, 200));
-        //addGameObject(new SpikesObject(5, 232));
-        //addGameObject(new SpikesObject2(50, 300));
+        //addGameObject(new DownSpikesObject(5, 232));
+        //addGameObject(new UpSpikesObject(50, 300));
         //addGameObject(new BoxObject(400, 300));
     }*/
 }
