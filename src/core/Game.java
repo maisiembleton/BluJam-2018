@@ -1,6 +1,10 @@
 package core;
 
+
 import game.levels.Level2;
+import game.levels.Level6;
+import game.levels.TestLevel;
+
 import game.menu.MenuLevel;
 import processing.core.PApplet;
 import processing.core.PGraphics;
@@ -13,7 +17,7 @@ public class Game extends PApplet {
     private Level currentLevel;
 
     private static Stack<String> signals = new Stack<>();
-    public void addSignal(String signal) {signals.add(signal);}
+    public static void addSignal(String signal) {signals.add(signal);}
 
 
     public void mousePressed() {
@@ -92,12 +96,17 @@ public class Game extends PApplet {
         AssetHandler.addAsset("playbutton.png", this); //378x81
         AssetHandler.addAsset("exitbutton.png", this); //378x81
 
+        //portal
+        for (int i = 1; i <= 8; i++) {
+            AssetHandler.addAsset("portal-"+i+".png", this);
+        }
 
         //audio
         //AudioHandler.loadAudioFile("biotone.wav", this);
         //AudioHandler.playAudioFile("biotone.wav");
 
-        currentLevel = new Level2();
+
+        currentLevel = new Level6();
 
     }
 
@@ -132,8 +141,8 @@ public class Game extends PApplet {
                 paused = true;
             } else if (signal.equals("resume")) {
                 paused = false;
-            } else if (signal.equals("")) {
-
+            } else if (signal.equals("next")) {
+                currentLevel = new TestLevel();
             }
         }
     }
