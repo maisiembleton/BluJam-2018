@@ -18,9 +18,6 @@ public class MenuLevel extends Level {
         addGameObject(new PlayButtonObject(450, 450));
         addGameObject(new ExitButtonObject(450, 550));
         addGameObject(new PortalObject(1210, 655, null));
-
-
-
     }
 
 }

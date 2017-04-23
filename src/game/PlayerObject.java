@@ -20,6 +20,8 @@ public class PlayerObject extends GameObject implements Collidable, Physicable{
     private PhysicsComponent physics;
     private Asset asset;
 
+    private PVector spawn = new PVector(0, 0);
+
     private boolean canJump = false;
 
     public Asset getAsset() {
@@ -44,6 +46,7 @@ public class PlayerObject extends GameObject implements Collidable, Physicable{
     public PlayerObject(float x, float y) {
         position.x = x;
         position.y = y;
+        spawn = new PVector(x, y);
         asset = AssetHandler.getAsset("test");
         collider = new ColliderComponent(this, 70, 33);
         physics = new PhysicsComponent(this);
@@ -58,20 +61,20 @@ public class PlayerObject extends GameObject implements Collidable, Physicable{
 
         PVector force = new PVector();
         if (InputHandler.isKeyDown(65)) {
-            force.add(-1, 0);
+            force.add(-4, 0);
         }
         if (InputHandler.isKeyDown(68)) {
-            force.add(1, 0);
+            force.add(4, 0);
         }
         if (InputHandler.isKeyDown(87)) {
-            force.add(0,-0.1f);
+            force.add(0,-4f);
             if (canJump) {
                 physics.velocity.add(0, -64);
                 canJump = false;
             }
         }
         if (InputHandler.isKeyDown(83)) {
-            force.add(0, 1);
+            force.add(0, 4);
         }
 
         for (MouseEvent e : InputHandler.getMouseEvents()) {
@@ -81,15 +84,13 @@ public class PlayerObject extends GameObject implements Collidable, Physicable{
         physics.setVelocity(force);
     }
 
+    public void respawn() {
+        position.x = spawn.x;
+        position.y = spawn.y;
+    }
+
     @Override
     public void update(float dt) {
-        if (collider.hasCollided()) {
-            Collidable obj = collider.getCollidedWith();
-            if (obj instanceof PortalObject) {
-                Debug.print("Coll?");
-                Game.changeLevel(((PortalObject)obj).next);
-            }
-        }
 
         asset.toString();
         position.toString();

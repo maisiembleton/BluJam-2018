@@ -3,7 +3,10 @@ package core.components;
 import core.Debug;
 import core.Game;
 import core.GameObject;
+import game.PlayerObject;
+import game.levelElements.DownSpikesObject;
 import game.levelElements.PortalObject;
+import game.levelElements.UpSpikesObject;
 import processing.core.PVector;
 
 import java.util.Collection;
@@ -117,6 +120,13 @@ public class PhysicsComponent<T extends GameObject & Physicable & Collidable> {
             if (c instanceof PortalObject) {
                 Debug.print("Coll?");
                 Game.changeLevel(((PortalObject) c).next);
+            }
+
+            if (c instanceof UpSpikesObject || c instanceof DownSpikesObject) {
+                if (obj instanceof PlayerObject) {
+                    PlayerObject player = (PlayerObject)obj;
+                    player.respawn();
+                }
             }
 
 
