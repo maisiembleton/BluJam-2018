@@ -8,11 +8,11 @@ import game.levelElements.*;
 /**
  * Created by sam on 23/04/17.
  */
-public class Level7 extends Level {
+public class Level9 extends Level {
 
     private PlayerObject player = new PlayerObject();
 
-    public Level7() {
+    public Level9() {
         int floorX = 0;
         addGameObject(new Background(0, 0));
         addGameObject(new PlayerObject(20,680));
