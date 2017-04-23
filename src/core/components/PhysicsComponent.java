@@ -69,33 +69,15 @@ public class PhysicsComponent <T extends GameObject & Physicable & Collidable> {
     private void resolveCollision() {
         ColliderComponent collider = obj.getCollider();
         if (collider.hasCollided()) {
-            Collidable collidedWith = collider.getCollidedWith();
-            PVector originalPos = new PVector(obj.getPosition().x, obj.getPosition().y);
-            char normal = 'o';
-            while (obj.getCollider().collidesWith(collidedWith)) {
-              if (velocity.mag() > 8) {break;}
-
-                obj.getPosition().add(-velocity.x*0.001f, -velocity.y*0.001f);
-                if (!obj.getCollider().xOverlaps(collidedWith)) {
-                    normal = 'x';
-                } else if (!obj.getCollider().yOverlaps(collidedWith)) {
-                    normal = 'y';
+            PVector normal = collider.getNormal();
+            netForce.add(normal.x*netForce.x, normal.y*netForce.y);
+            if (Math.abs(normal.y) > 0.5f) {
+                if (velocity.y > 0) {
+                    velocity.set(velocity.x, 0);
                 }
+            } else {
+                velocity.set(0, velocity.y);
             }
-
-
-            if (normal == 'x') {
-                Debug.print(normal);
-                netForce = new PVector(0, netForce.y);
-              velocity = new PVector(0, velocity.y);
-
-            } else if (normal == 'y') {
-                Debug.print(normal);
-                velocity = new PVector(velocity.x, 0);
-                netForce = new PVector(netForce.x, 0);
-                velocity = new PVector(velocity.x, 0);
-            }
-
         }
     }
 

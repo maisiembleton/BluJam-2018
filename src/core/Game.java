@@ -101,7 +101,7 @@ public class Game extends PApplet {
         //AudioHandler.loadAudioFile("biotone.wav", this);
         //AudioHandler.playAudioFile("biotone.wav");
 
-        currentLevel = new MenuLevel();
+        currentLevel = new TestLevel();
 
     }
 
