@@ -16,7 +16,7 @@ public class Level1 extends Level {
         int floorX = 0;
         addGameObject(new Background(0, 0));
 
-        addGameObject(new PortalObject(1160, 630));
+        addGameObject(new PortalObject(1160, 630, new Level2()));
         addGameObject(new PlayerObject(20, 680));
 
         //wall

@@ -48,7 +48,7 @@ public class Level3 extends Level {
 
 
         //portal
-        addGameObject(new PortalObject(1140, 55));
+        addGameObject(new PortalObject(1140, 55, new Level5()));
 
 
     }
