@@ -97,6 +97,11 @@ public class Game extends PApplet {
             AssetHandler.addAsset("portal-"+i+".png", this);
         }
 
+        //portal
+        for (int i = 1; i <= 8; i++) {
+            AssetHandler.addAsset("portalflip-"+i+".png", this);
+        }
+
         //audio
         //AudioHandler.loadAudioFile("biotone.wav", this);
         //AudioHandler.playAudioFile("biotone.wav");
