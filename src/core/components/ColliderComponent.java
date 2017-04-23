@@ -169,7 +169,10 @@ public class ColliderComponent {
                         normal = new PVector(0, 1);
                     }
                 }
-                return collides(other);
+
+                Debug.print(normal.toString());
+                return true;
+
             } else {
                 return collides(other);
             }

@@ -71,7 +71,7 @@ public class Game extends PApplet {
         //testGraphic.rect(0, 0, 32, 32);
         //testGraphic.endDraw();
 
-       // Asset testAsset = new Asset("test", testGraphic);
+        // Asset testAsset = new Asset("test", testGraphic);
         //AssetHandler.assets.put(testAsset.name, testAsset);
 
         PImage test = loadImage("blue.png");
@@ -80,7 +80,7 @@ public class Game extends PApplet {
 
         AssetHandler.addAsset("blue.png", this); //70x33
 
-         PGraphics t =  createGraphics(40, 10);
+        PGraphics t =  createGraphics(40, 10);
         t.beginDraw();
         t.fill(255, 0, 0);
         t.rect(0,0,40, 10);
@@ -88,7 +88,7 @@ public class Game extends PApplet {
         Asset ta = new Asset("platform.png", t);
         AssetHandler.assets.put(ta.name, ta);
 
-       //Object stuff
+        //Object stuff
         AssetHandler.addAsset("platform.png", this); //146x32
         AssetHandler.addAsset("wall.png", this); //81x832
         AssetHandler.addAsset("wall (1).png", this); //61x640
@@ -110,15 +110,20 @@ public class Game extends PApplet {
             AssetHandler.addAsset("portal-"+i+".png", this);
         }
 
+        //portal
+        for (int i = 1; i <= 8; i++) {
+            AssetHandler.addAsset("portalflip-"+i+".png", this);
+        }
+
         //audio
         //AudioHandler.loadAudioFile("biotone.wav", this);
         //AudioHandler.playAudioFile("biotone.wav");
 
+        currentLevel = new MenuLevel();
 
-        currentLevel = new Level6();
 
     }
-
+ 
     float x = 0;
     float delta = 1;
     PImage img;
@@ -168,10 +173,10 @@ public class Game extends PApplet {
     public void run() {
         // could probably put in draw tbh..
         //while true
-            // while (playing level)
-                // simulate all the stuff in the level (update(dt) i guess).
-                // render the level render(level)
-            // render the ui
+        // while (playing level)
+        // simulate all the stuff in the level (update(dt) i guess).
+        // render the level render(level)
+        // render the ui
 
     }
 
