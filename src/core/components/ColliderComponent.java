@@ -2,6 +2,7 @@ package core.components;
 
 import core.Debug;
 import core.GameObject;
+import core.Level;
 import processing.core.PVector;
 
 import java.util.Collection;
@@ -12,6 +13,10 @@ import java.util.List;
  */
 public class ColliderComponent {
 
+    public Level level;
+    public void setLevel(Level level) {
+        this.level = level;
+    }
     private GameObject obj;
     private Collidable collidedWith;
     private Rectangle collisionBox;
@@ -164,11 +169,12 @@ public class ColliderComponent {
                         normal = new PVector(0, 1);
                     }
                 }
-                return true;
+                return collides(other);
             } else {
-                return false;
+                return collides(other);
             }
         }
+
 
         public boolean collides(Rectangle otherRectangle) {
             return this.getAbsX() < otherRectangle.getAbsX2() &&

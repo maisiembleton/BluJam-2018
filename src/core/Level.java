@@ -27,6 +27,7 @@ public class Level {
         gameObjects.add(obj);
         if (obj instanceof Collidable) {
             collidables.add((Collidable)obj);
+            ((Collidable) obj).getCollider().setLevel(this);
         }
     }
 
@@ -54,6 +55,18 @@ public class Level {
                 }
             }
         }
+    }
+
+    public boolean collides(Collidable obj) {
+        for (Collidable c : collidables) {
+            if (c == obj) {continue;}
+            else {
+                if (obj.getCollider().collidesWith(c)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public Level(File levelFile) {

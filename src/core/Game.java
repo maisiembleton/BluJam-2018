@@ -10,11 +10,15 @@ import processing.core.PApplet;
 import processing.core.PGraphics;
 import processing.core.PImage;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Stack;
 
 public class Game extends PApplet {
 
     private Level currentLevel;
+    private HashMap<String, Level> levels = new HashMap<>();
 
     private static Stack<String> signals = new Stack<>();
     public static void addSignal(String signal) {signals.add(signal);}
@@ -42,11 +46,14 @@ public class Game extends PApplet {
         currentLevel = level;
     }
 
+
     public void settings() {
         size(1280, 832);
     }
 
-
+    public void setupLevels() {
+        levels.put("test level", new TestLevel());
+    }
 
 
     public void setup() {
@@ -106,7 +113,7 @@ public class Game extends PApplet {
         //AudioHandler.playAudioFile("biotone.wav");
 
 
-        currentLevel = new Level6();
+        currentLevel = new TestLevel();
 
     }
 
@@ -141,8 +148,12 @@ public class Game extends PApplet {
                 paused = true;
             } else if (signal.equals("resume")) {
                 paused = false;
-            } else if (signal.equals("next")) {
+            } else if (signal.equals("setLevel")) {
                 currentLevel = new TestLevel();
+                String level = signals.pop();
+                if (levels.containsKey(level)) {
+                    currentLevel = levels.get(level);
+                }
             }
         }
     }
