@@ -1,5 +1,5 @@
 package core;
-import processing.sound.*;
+//import processing.sound.*;
 
 import java.util.HashMap;
 
@@ -8,6 +8,7 @@ import java.util.HashMap;
  */
 public class AudioHandler {
 
+    /*
     public static HashMap<String, SoundFile> audioAssets = new HashMap<>();
 
     public static void loadAudioFile(String name, Game game) {
@@ -19,4 +20,5 @@ public class AudioHandler {
     public static void playAudioFile(String name) {
         audioAssets.get(name).play();
     }
+    */
 }
