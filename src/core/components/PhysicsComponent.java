@@ -80,10 +80,10 @@ public class PhysicsComponent <T extends GameObject & Physicable & Collidable> {
                 velocity.set(0, velocity.y);
             }
 
-            while (collider.collidesWith(collider.getCollidedWith())) {
+            //while (collider.collidesWith(collider.getCollidedWith())) {
                 Debug.print("Bump");
                 obj.getPosition().add(normal);
-            }
+            //}
         }
     }
 
