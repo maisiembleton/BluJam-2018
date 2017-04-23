@@ -18,6 +18,10 @@ public class Level5 extends Level {
         addGameObject(new PlayerObject(20,680));
 
         //wall
+        addGameObject(new WallObject(-80, 0));
+        addGameObject(new WallObject(1280, 0));
+
+        //wall
         addGameObject(new WallObject2(300, -80));
         addGameObject(new WallObject2(300, 670));
         addGameObject(new WallObject2(700, 350));
@@ -49,6 +53,10 @@ public class Level5 extends Level {
         addGameObject(new SpikesObject2(906, 728));
         addGameObject(new SpikesObject2(1052, 728));
         addGameObject(new SpikesObject2(1198, 728));
+
+
+        //portal
+        addGameObject(new PortalObject(1030, 0));
 
 
 

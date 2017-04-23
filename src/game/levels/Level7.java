@@ -17,6 +17,9 @@ public class Level7 extends Level {
         addGameObject(new Background(0, 0));
         addGameObject(new PlayerObject(20,680));
 
+        //wall
+        addGameObject(new WallObject(-80, 0));
+        addGameObject(new WallObject(1280, 0));
 
         //floor
         while (floorX < 1280) {
@@ -87,6 +90,10 @@ public class Level7 extends Level {
 
         addGameObject(new BoxObject(266, 750));
         addGameObject(new TileObject1(266, 686));
+
+
+        //portal
+        addGameObject(new PortalObject(90, 70));
 
     }
 

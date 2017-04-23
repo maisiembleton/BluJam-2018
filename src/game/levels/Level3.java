@@ -3,15 +3,12 @@ package game.levels;
 import core.Level;
 import game.Background;
 import game.PlayerObject;
-import game.levelElements.PlatformObject;
-import game.levelElements.TileObject1;
-import game.levelElements.TileObject2;
-import game.levelElements.TileObject3;
+import game.levelElements.*;
 
 /**
  * Created by sam on 23/04/17.
  */
-public class Level3 extends Level { 
+public class Level3 extends Level {
 
     private PlayerObject player = new PlayerObject();
 
@@ -20,6 +17,9 @@ public class Level3 extends Level {
         addGameObject(new Background(0, 0));
         addGameObject(new PlayerObject(20, 680));
 
+        //wall
+        addGameObject(new WallObject(-80, 0));
+        addGameObject(new WallObject(1280, 0));
 
         //platforms
 
@@ -29,6 +29,7 @@ public class Level3 extends Level {
         addGameObject(new PlatformObject(720, 420));
         addGameObject(new PlatformObject(900, 300));
         addGameObject(new PlatformObject(1080, 180));
+
 
 
         //floor
@@ -44,6 +45,10 @@ public class Level3 extends Level {
 
 
         }
+
+
+        //portal
+        addGameObject(new PortalObject(1140, 55));
 
 
     }
