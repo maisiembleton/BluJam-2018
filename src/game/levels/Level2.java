@@ -100,8 +100,8 @@ public class Level2 extends Level {
             tileX += tileWidth;
         }
 
-
-
+        //portal
+        addGameObject(new PortalObject(1100, 475));
 
 
 }

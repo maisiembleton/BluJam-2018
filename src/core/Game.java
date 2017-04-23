@@ -1,6 +1,7 @@
 package core;
 
 
+import game.levels.Level1;
 import game.levels.Level2;
 import game.levels.Level6;
 import game.levels.TestLevel;
