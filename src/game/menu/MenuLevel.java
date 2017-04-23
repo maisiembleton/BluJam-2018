@@ -2,7 +2,8 @@ package game.menu;
 
 import core.Level;
 import game.Background;
-import game.PlayerObject;
+import game.buttons.ExitButtonObject;
+import game.buttons.PlayButtonObject;
 import game.levelElements.PortalObject;
 
 /**

@@ -3,14 +3,13 @@ package core;
 
 import game.levels.*;
 
+import game.inBetweenScreen.InBetweenLevel;
 import game.menu.MenuLevel;
 import processing.core.PApplet;
 import processing.core.PGraphics;
 import processing.core.PImage;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Stack;
 
 public class Game extends PApplet {
@@ -102,6 +101,11 @@ public class Game extends PApplet {
         AssetHandler.addAsset("title.png", this); //626x300
         AssetHandler.addAsset("playbutton.png", this); //378x81
         AssetHandler.addAsset("exitbutton.png", this); //378x81
+        AssetHandler.addAsset("exittomainbutton.png", this); //378x81
+        AssetHandler.addAsset("title (1).png", this); // 380x182
+        AssetHandler.addAsset("nextlevel.png", this); //378x81
+        AssetHandler.addAsset("replaylevel.png", this); //378x81
+
 
         //portal
         for (int i = 1; i <= 8; i++) {
@@ -121,7 +125,7 @@ public class Game extends PApplet {
 
 
     }
- 
+
     float x = 0;
     float delta = 1;
     PImage img;

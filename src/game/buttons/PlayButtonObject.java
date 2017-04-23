@@ -1,4 +1,4 @@
-package game.menu;
+package game.buttons;
 
 import core.Asset;
 import core.AssetHandler;

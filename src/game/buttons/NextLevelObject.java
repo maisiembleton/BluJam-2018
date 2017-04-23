@@ -1,32 +1,39 @@
-package game.menu;
+package game.buttons;
 
 import core.Asset;
 import core.AssetHandler;
 import core.Game;
+import core.Level;
 import game.Button;
-import game.levels.Level5;
+import game.levels.Level1;
 
 /**
- * Created by sam on 23/04/17.
+ * Created by zva on 22/04/17.
  */
+public class NextLevelObject extends Button  {
 
-
-public class ExitToMainButtonObject extends Button {
-
-    private float width;
-    private float height;
 
     private Asset asset;
 
-    public ExitToMainButtonObject(float x, float y) {
+    private float width;
+    private float height;
+    private Level next;
+
+    public NextLevelObject(float x, float y, Level nextLevel) {
         position.x = x;
         position.y = y;
+        next = nextLevel;
         width = 378;
         height = 81;
 
 
-        asset = AssetHandler.getAsset("exitbutton.png");
+        asset = AssetHandler.getAsset("nextlevel.png");
+
+
+
     }
+
+
 
 
     @Override
@@ -44,8 +51,10 @@ public class ExitToMainButtonObject extends Button {
     public void onClick(Game game, int x, int y) {
         if (x > position.x && x < position.x + width &&
                 y > position.y && y < position.y + height) {
-
-           // game.MenuLevel();
+            game.changeLevel(next);
         }
     }
+
+
+
 }

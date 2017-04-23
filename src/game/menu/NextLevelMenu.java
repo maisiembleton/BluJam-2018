@@ -1,8 +1,8 @@
 package game.menu;
 
 import core.Level;
-import game.Background;
-import game.levelElements.PortalObject;
+import game.buttons.ExitToMainButtonObject;
+import game.buttons.PlayButtonObject;
 
 /**
  * Created by sam on 23/04/17.

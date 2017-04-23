@@ -3,6 +3,7 @@ package game.levels;
 import core.Level;
 import game.Background;
 import game.PlayerObject;
+import game.inBetweenScreen.InBetweenLevel;
 import game.levelElements.*;
 
 /**
@@ -39,8 +40,11 @@ public class Level1 extends Level {
         }
 
         //portal
-            addGameObject(new PortalObject(1100, 600, new Level2()));
+            //addGameObject(new PortalObject(1100, 600, new InBetweenLevel(Level1(), Level2(), 0)));
 
+        InBetweenLevel inbetweenLevel = new InBetweenLevel(this, new Level2(), 0);
+        PortalObject portal = new PortalObject(1100, 600, inbetweenLevel);
+        addGameObject(portal);
     }
 
 

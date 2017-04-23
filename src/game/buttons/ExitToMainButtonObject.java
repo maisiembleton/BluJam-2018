@@ -1,28 +1,31 @@
-package game.menu;
+package game.buttons;
 
 import core.Asset;
 import core.AssetHandler;
 import core.Game;
 import game.Button;
+import game.levels.Level5;
 
 /**
- * Created by zva on 22/04/17.
+ * Created by sam on 23/04/17.
  */
-public class ExitButtonObject extends Button {
+
+
+public class ExitToMainButtonObject extends Button {
 
     private float width;
     private float height;
 
     private Asset asset;
 
-    public ExitButtonObject(float x, float y) {
+    public ExitToMainButtonObject(float x, float y) {
         position.x = x;
         position.y = y;
         width = 378;
         height = 81;
 
 
-        asset = AssetHandler.getAsset("exitbutton.png");
+        asset = AssetHandler.getAsset("exittomainbutton.png");
     }
 
 
@@ -42,7 +45,7 @@ public class ExitButtonObject extends Button {
         if (x > position.x && x < position.x + width &&
                 y > position.y && y < position.y + height) {
 
-            game.exit();
+           // game.MenuLevel();
         }
     }
 }
