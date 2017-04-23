@@ -1,12 +1,10 @@
 package game.levelElements;
 
-import core.Asset;
-import core.AssetHandler;
-import core.Game;
-import core.GameObject;
+import core.*;
 import core.components.Collidable;
 import core.components.ColliderComponent;
 import game.PlayerObject;
+import game.levels.Level1;
 
 /**
  * Created by zva on 23/04/17.
@@ -46,7 +44,7 @@ public class PortalObject extends GameObject implements Collidable {
         if (collider.hasCollided()) {
             Collidable obj = collider.getCollidedWith();
             if (obj instanceof PlayerObject) {
-                Game.addSignal("next");
+                Game.changeLevel(new Level1());
             }
         }
     }

@@ -27,5 +27,6 @@ public class TestLevel extends Level {
         addGameObject(new SpikesObject(5, 232));
         addGameObject(new SpikesObject2(50, 300));
         addGameObject(new BoxObject(400, 300));
+        addGameObject(new PortalObject(200, 200));
     }
 }
