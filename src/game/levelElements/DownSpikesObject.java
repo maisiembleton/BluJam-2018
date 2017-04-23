@@ -11,14 +11,14 @@ import core.components.PhysicsComponent;
 /**
  * Created by zva on 22/04/17.
  */
-public class SpikesObject2 extends GameObject implements Collidable, Physicable {
+public class DownSpikesObject extends GameObject implements Collidable, Physicable {
 
     private PhysicsComponent physics;
     private ColliderComponent collider;
 
     private Asset asset;
 
-    public SpikesObject2(float x, float y) {
+    public DownSpikesObject(float x, float y) {
         position.x = x;
         position.y = y;
 
@@ -26,8 +26,7 @@ public class SpikesObject2 extends GameObject implements Collidable, Physicable 
         physics = new PhysicsComponent(this);
         //physics.setGravity(false);
         collider = new ColliderComponent(this, 146, 23);
-        asset = AssetHandler.getAsset("spikes (2).png");
-
+        asset = AssetHandler.getAsset("spikes (1).png");
     }
 
     @Override
@@ -52,6 +51,6 @@ public class SpikesObject2 extends GameObject implements Collidable, Physicable 
     }
 
     public String toString() {
-        return "Spikes 2 :" + position.x + position.y;
+        return "Spikes 1 :" + position.x + position.y;
     }
 }

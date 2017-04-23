@@ -14,6 +14,7 @@ public class Level6 extends Level {
 
     public Level6() {
         int floorX = 0;
+        int floorY = 750;
         addGameObject(new Background(0, 0));
         addGameObject(new PlayerObject(20,680));
 
@@ -24,42 +25,88 @@ public class Level6 extends Level {
         //floor
         while (floorX < 1280) {
 
-            addGameObject(new TileObject1(floorX, 750));
+            addGameObject(new TileObject1(floorX, floorY));
             floorX += 64;
-            addGameObject(new TileObject2(floorX, 750));
+            addGameObject(new TileObject2(floorX, floorY));
             floorX += 64;
-            addGameObject(new TileObject3(floorX, 750));
+            addGameObject(new TileObject3(floorX, floorY));
             floorX += 64;
         }
+
 
         //walls
         addGameObject(new WallObject2(330, -100)); //left top
 
-        addGameObject(new WallObject2(683, 195)); //bottom middle
+        addGameObject(new WallObject2(783, 195)); //bottom middle
 
-        addGameObject(new WallObject2(890, -445)); //right top
-
-
-        //platforms
-        addGameObject(new PlatformObject(391, 498)); //left bottom
-        addGameObject(new PlatformObject(391, 300)); //left bottom
+        addGameObject(new WallObject2(980, -445)); //right top
 
 
-        addGameObject(new PlatformObject(537, 195)); //middle top
-
-        addGameObject(new PlatformObject(537, 400)); //middle middle
-
-        addGameObject(new PlatformObject(537, 650)); //middle bottom
-
-
-        //spikes
-        addGameObject(new SpikesObject(391, 530)); // left bottom
-
-        addGameObject(new SpikesObject(537, 227)); //middle top
+        //platforms going up - numbered from bottom to top
+        int platformX = 0;
+        int platformY = 0;
+        int spikeY = platformY + 32;
 
 
+        //1
+        platformX = 300;
+        platformY = 650;
+        spikeY = platformY + 32;
+
+        addGameObject(new PlatformObject(platformX, platformY));
+        addGameObject(new DownSpikesObject(platformX, spikeY)); //spikes
+
+        //2
+        platformX = 575; //left
+        platformY = 575;
+        spikeY = platformY + 32;
+        addGameObject(new PlatformObject(platformX, platformY));
+
+        platformX = 637; //right
+        platformY = 575;
+        spikeY = platformY + 32;
+        addGameObject(new PlatformObject(platformX, platformY));
+
+        //3
+        platformX = 500;
+        platformY = 460;
+        spikeY = platformY + 32;
+        addGameObject(new PlatformObject(platformX, platformY));
+
+        //4
+        platformX = 391;
+        platformY = 350;
+        spikeY = platformY + 32;
+        addGameObject(new PlatformObject(platformX, platformY));
 
 
+        //platforms going down numbered from top to bottom
+
+        addGameObject(new PlatformObject(844, 350)); //1
+
+        //1
+        platformX = 844;
+        platformY = 350;
+        spikeY = platformY - 23;
+
+        addGameObject(new PlatformObject(platformX, platformY));
+        addGameObject(new UpSpikesObject(platformX, spikeY)); //spikes on top
+
+
+        //2
+        platformX = 1050;
+        platformY = 540;
+        spikeY = platformY - 23;
+
+        addGameObject(new PlatformObject(platformX, platformY));
+        addGameObject(new UpSpikesObject(platformX, spikeY)); //spikes on top
+
+        //spikes (no platform) 3
+        platformX = 844;
+        spikeY = floorY - 23;
+
+
+        addGameObject(new UpSpikesObject(platformX, spikeY)); //spikes on top
     }
 
 
@@ -67,8 +114,8 @@ public class Level6 extends Level {
        /**
 
         //addGameObject(new PlatformObject(5, 200));
-        //addGameObject(new SpikesObject(5, 232));
-        //addGameObject(new SpikesObject2(50, 300));
+        //addGameObject(new DownSpikesObject(5, 232));
+        //addGameObject(new UpSpikesObject(50, 300));
         //addGameObject(new BoxObject(400, 300));
     }*/
 }
